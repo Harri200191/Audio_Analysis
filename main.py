@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog
 import os
-#from pydub import AudioSegment
+from pydub import AudioSegment
 import shutil
 
 def select_audio_file():
@@ -28,8 +28,8 @@ def extract_extension(input_string):
         return input_string
 
 def convert_audio_to_mp3(input_path, output_path): 
-    #audio = AudioSegment.from_file(input_path) 
-    #audio.export(output_path, format="mp3")
+    audio = AudioSegment.from_file(input_path) 
+    audio.export(output_path, format="mp3")
     None
     
 def copy_to_current_directory(source_path, destination_directory):
@@ -42,7 +42,7 @@ def copy_to_current_directory(source_path, destination_directory):
     shutil.copy2(source_path, destination_path)
     input_path = "MainAudio."+extens  
     output_path = "MainAudio.mp3"
-    #convert_audio_to_mp3(input_path, output_path)
+    convert_audio_to_mp3(input_path, output_path)
     
     return destination_path
 
