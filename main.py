@@ -29,7 +29,7 @@ def extract_extension(input_string):
 
 def convert_audio_to_mp3(input_path, output_path): 
     audio = AudioSegment.from_file(input_path) 
-    audio.export(output_path, format="mp3")
+    audio.export(output_path, format="wav")
     None
     
 def copy_to_current_directory(source_path, destination_directory):
@@ -41,7 +41,7 @@ def copy_to_current_directory(source_path, destination_directory):
     destination_path = os.path.join(destination_directory, "MainAudio."+extens)
     shutil.copy2(source_path, destination_path)
     input_path = "MainAudio."+extens  
-    output_path = "MainAudio.mp3"
+    output_path = "MainAudio.wav"
     convert_audio_to_mp3(input_path, output_path)
     
     return destination_path
